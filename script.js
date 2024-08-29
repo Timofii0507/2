@@ -1,15 +1,11 @@
-function makeAllPositive(arr) {
-    let hasNegative = arr.some(num => num < 0);
-    
-    if (hasNegative) {
-        return arr.map(num => Math.abs(num));
-    } else {
-        return "No negative numbers found";
-    }
+function sumOfMultiplesOfThree(arr) {
+    return arr
+        .filter(num => num > 0 && num % 3 === 0)
+        .reduce((sum, num) => sum + num, 0);
 }
 
-let arr1 = [7, -3, 8, 12, -15, 5];
-console.log(makeAllPositive(arr1));
+let arr3 = [3, 5, -9, 7, 12, 8, 10, -6];
+console.log(sumOfMultiplesOfThree(arr3)); // Виведе: 15
 
-let arr2 = [2, 9, 14, 21];
-console.log(makeAllPositive(arr2));
+let arr4 = [6, 14, -12, 9, 4];
+console.log(sumOfMultiplesOfThree(arr4)); // Виведе: 15
